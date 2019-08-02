@@ -1,0 +1,12 @@
+.row{
+    background-color: darkblue;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.col{
+    background-color: aliceblue;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid orange;
+}

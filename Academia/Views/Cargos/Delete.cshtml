@@ -1,0 +1,27 @@
+﻿@model Academia.Models.Cargo
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Estas seguro de eliminar este Cargo Empresarial?</h3>
+<div>
+    <h4> Eliminar Cargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CargoID" />
+        <input type="submit" value="Eliminar" class="btn btn-outline-danger" /> |
+        <a asp-action="Index" class="btn btn-outline-primary">Volver</a>
+    </form>
+</div>

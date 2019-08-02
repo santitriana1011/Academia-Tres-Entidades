@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Academia.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Empleados";
+}
+
+<link href="~/css/Estilos.css" rel="stylesheet" />
+
+<h2>Nuestros Empleados</h2>
+
+<p>
+    <a class="btn btn-outline-dark mt-5"  asp-action="Create">Crear Un Nuevo Empleado</a>
+</p>
+
+@foreach (var item in Model)
+{
+
+
+        <div class="card-body mt-3">
+            <p class="card-text">
+                <h4>
+                    @Html.DisplayNameFor(model => model.Cargo)
+                </h4>
+                @Html.DisplayFor(modelItem => item.Cargo.Nombre)
+            </p>
+
+            <p class="card-text">
+                <h4>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </h4>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </p>
+
+            <p class="card-text">
+                <h4>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </h4>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </p>
+
+            <p class="card-text">
+                <h4>
+                    @Html.DisplayNameFor(model => model.Documento)
+                </h4>
+                @Html.DisplayFor(modelItem => item.Documento)
+            </p>
+
+            <p class="card-text">
+                <h4>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </h4>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </p>
+
+            <p class="card-text">
+                <h4>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </h4>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </p>
+
+            <p class="card-text">
+                <h4>
+                    @Html.DisplayNameFor(model => model.Rol)
+                </h4>
+                @Html.DisplayFor(modelItem => item.Rol)
+            </p>
+
+            <div>
+                <a asp-action="Edit" asp-route-id="@item.EmpleadoID" class="btn btn-outline-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.EmpleadoID" class="btn btn-outline-success">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmpleadoID" class="btn btn-outline-danger">Eliminar</a>
+            </div>
+
+        </div>
+
+        
+  
+}

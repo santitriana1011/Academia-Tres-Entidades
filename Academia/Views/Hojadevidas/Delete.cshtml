@@ -1,0 +1,39 @@
+﻿@model Academia.Models.Hojadevida
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Esta seguro de eliminar esta Hoja de Vida?</h3>
+<div>
+    <h4>Hojadevida</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Especialidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Especialidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TiempoExperiencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TiempoExperiencia)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="HojadevidaID" />
+        <input type="submit" value="Eliminar" class="btn btn-outline-danger" /> |
+        <a asp-action="Index" class="btn btn-outline-primary"> << Volver</a>
+    </form>
+</div>
