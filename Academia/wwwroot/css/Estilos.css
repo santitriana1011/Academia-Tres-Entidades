@@ -1,24 +1,20 @@
-﻿.navbar {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: .9rem;
-    letter-spacing: .1rem;
-    background: rgba(0, 0, 0, 0.6) !important;
-    margin-bottom: 25px !important;
+﻿.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: white;
-    padding-top: .8rem;
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
-
-    .navbar-dark .navbar-nav .nav-link.active,
-    .navbar-dark .navbar-nav .nav-link:hover {
-        color: #2980B9;
-        margin-bottom: 55px !important;
-    }
-
-
-
-
-

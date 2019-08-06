@@ -81,7 +81,7 @@ namespace Academia.Controllers
             {
                 return NotFound();
             }
-            ViewData["EmpleadoID"] = new SelectList(_context.Empleado, "EmpleadoID", "Apellido", hojadevida.EmpleadoID);
+            ViewData["EmpleadoID"] = new SelectList(_context.Empleado, "EmpleadoID", "Nombre", hojadevida.EmpleadoID);
             return View(hojadevida);
         }
 

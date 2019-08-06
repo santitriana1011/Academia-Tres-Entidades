@@ -4,76 +4,101 @@
     ViewData["Title"] = "Empleados";
 }
 
-<link href="~/css/Estilos.css" rel="stylesheet" />
 
-<h2>Nuestros Empleados</h2>
+
+<h2 class="mt-5">Nuestros Empleados</h2>
 
 <p>
     <a class="btn btn-outline-dark mt-5"  asp-action="Create">Crear Un Nuevo Empleado</a>
 </p>
 
-@foreach (var item in Model)
-{
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargo)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Documento)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rol)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
 
 
-        <div class="card-body mt-3">
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.Cargo)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Cargo.Nombre)
-            </p>
 
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.Nombre)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </p>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cargo.Nombre)
+                </td>
 
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.Apellido)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </p>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
 
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.Documento)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Documento)
-            </p>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
 
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.Telefono)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </p>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Documento)
+                </td>
 
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.Direccion)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </p>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
 
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.Rol)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Rol)
-            </p>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion)
+                </td>
 
-            <div>
-                <a asp-action="Edit" asp-route-id="@item.EmpleadoID" class="btn btn-outline-primary">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.EmpleadoID" class="btn btn-outline-success">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.EmpleadoID" class="btn btn-outline-danger">Eliminar</a>
-            </div>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rol)
+                </td>
 
-        </div>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmpleadoID" class="btn btn-outline-primary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.EmpleadoID" class="btn btn-outline-success">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EmpleadoID" class="btn btn-outline-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+</tbody>
+</table>
 
-        
-  
-}
+<h2 class="mt-2">En la Siguiente Grafica Aparecera el balance del vencimiento de los contratos: </h2>
+<div class="progress mt-4">
+    <div class="progress-bar bg-success" style="width:40%">
+       Sin Vencer
+    </div>
+    <div class="progress-bar bg-warning" style="width:30%">
+       Vencen Pronto
+    </div>
+    <div class="progress-bar bg-danger" style="width:30%">
+        Vencidos
+    </div>
+</div>

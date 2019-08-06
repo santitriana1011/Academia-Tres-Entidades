@@ -4,46 +4,54 @@
     ViewData["Title"] = "Hoja de Vida";
 }
 
-@*<link href="~/css/Estilos.css" rel="stylesheet" />*@
 
-<h2>Hojas de Vida</h2>
+
+<h2 class="mt-5">Hojas de Vida</h2>
 
 <p>
     <a asp-action="Create" class="btn btn-outline-dark mt-5">Crear Nueva Hoja de Vida</a>
 </p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleado)
+            </th>
 
-@foreach (var item in Model)
-{
-   
-        <div class="card-body">
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidad)
+            </th>
 
+            <th>
+                @Html.DisplayNameFor(model => model.TiempoExperiencia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
 
-            <p class="card-text">
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+                </td>
 
-                <h4>
-                    @Html.DisplayNameFor(model => model.Empleado)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Empleado.Nombre)
-            </p>
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.Especialidad)
-                </h4>
-                @Html.DisplayFor(modelItem => item.Especialidad)
-            </p>
-            <p class="card-text">
-                <h4>
-                    @Html.DisplayNameFor(model => model.TiempoExperiencia)
-                </h4>
-                @Html.DisplayFor(modelItem => item.TiempoExperiencia)
-            </p>
-            <div>
-                <a asp-action="Edit" asp-route-id="@item.HojadevidaID" class="btn btn-outline-primary">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.HojadevidaID" class="btn btn-outline-success">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.HojadevidaID" class="btn btn-outline-danger">Eliminar</a>
-            </div>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidad)
+                </td>
 
-        </div>
-  
-}
+                <td>
+                    @Html.DisplayFor(modelItem => item.TiempoExperiencia)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.HojadevidaID" class="btn btn-outline-primary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.HojadevidaID" class="btn btn-outline-success">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.HojadevidaID" class="btn btn-outline-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
